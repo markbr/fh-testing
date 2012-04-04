@@ -1,9 +1,23 @@
 <!doctype html>
 <html>
 <head>
-	
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
-	
+
+	<div id="container">
+		<div class="centered">
+			http://<input type="url" id="address" autofocus pattern=""><div class="button" id="go">GO</div>
+		</div>
+	<div>
+
+	<script>
+		var address = document.getElementById("address");
+		document.getElementById("go").addEventListener("click", function() {
+			window.location = "http://" + address.value + "/client/default/";
+		});
+	</script>
 </body>
 </html>
