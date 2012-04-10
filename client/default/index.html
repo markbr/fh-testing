@@ -1,4 +1,4 @@
-
+	
 <link href="enyo/enyo.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="lib/onyx/build/onyx.css" rel="stylesheet" type="text/css">
@@ -10,7 +10,8 @@
 
 $fh.ready({}, function() {
 		//navigator.app.addWhiteListEntry("http://*", "*");
-		var app = new App();
-		app.renderInto(document.body);
+		var app = new App(),
+			el = document.body.appendChild(document.createElement("div"));
+		app.renderInto(el);
 });
 </script>
