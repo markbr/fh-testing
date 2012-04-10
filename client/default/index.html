@@ -9,7 +9,7 @@
 
 
 $fh.ready({}, function() {
-		navigator.app.addWhiteListEntry("*", "*");
+		navigator.app.addWhiteListEntry("http://*", "*");
 		var app = new App()
 		el = document.body.appendChild(document.createElement("div"));
 		app.renderInto(document.body);
