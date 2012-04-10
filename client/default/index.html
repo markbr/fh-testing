@@ -11,7 +11,7 @@
 $fh.ready({}, function() {
 		navigator.app.addWhiteListEntry("*", "*");
 		var app = new App()
-		el = document.appendChild(document.createElement("div"));
+		el = document.body.appendChild(document.createElement("div"));
 		app.renderInto(document.body);
 });
 </script>
