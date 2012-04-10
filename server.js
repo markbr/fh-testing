@@ -34,6 +34,7 @@ for(var i = 0, il = argv.length; i < il; i++) {
 }
 
 var domain = args.domain + args.baseDomain,
+	viewportTag = '<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />',
 	browserScript = '<script src="https://' + domain + '/static/pec/script/studio/155-scripts.js"></script>',
 	//the device script is loaded from the device because it includes phonegap which the browser does not need
 	deviceScript = '<script src="fhext/js/container.js"></script><script src="js/shake.js"></script><script>window.addEventListener("shake", function() { window.location = "file:///android_asset/www/index.html"}, false);</script>',
@@ -139,8 +140,9 @@ http.createServer(function(request, response) {
 					"content-type": mimeTypes[filename.split(".").pop()] || mimeTypes.txt
 				});
 				if(filename.indexOf("index.html") > 0) {
-					//response.write(requestParams.query.device !== undefined ? deviceScript : browserScript);
-					//response.write(initialiseScript);
+					response.write(viewportTag);
+					response.write(requestParams.query.device !== undefined ? deviceScript : browserScript);
+					response.write(initialiseScript);
 				}
 				response.write(file, "binary");
 				response.end();

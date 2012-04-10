@@ -1,23 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
-	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+  <head>
+  	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no initial-scale = 1.0,maximum-scale = 1.0" />
+    
+    <script src="fhext/js/container.js" type="text/javascript"></script>
+    <script>
+      $fhclient = $fh.init({"appMode":"debug","checkDeliveryScheme":false,"debugCloudType":"fh","debugCloudUrl":"http://psdev.feedhenry.com","deliveryScheme":"http://","destination":{"inline":false,"name":"android"},"domain":"psdev","host":"psdev.feedhenry.com","nameserver":"https://ainm.feedhenry.com","releaseCloudType":"fh","releaseCloudUrl":"http://psdev.feedhenry.com","swagger_view":"-uXmru1iVSocNQO2mfZRGugW","urltag":"","useSecureConnection":true,"user":{"id":"-KC5CMXPgLl_o4sUCuGauvlU","role":"sub"},"widget":{"guid":"XNDNDu6raH87Bj45lb7OR-eI","inline":false,"instance":"XNDNDlESAHFWnF6iP7-UIn-y","version":4}});
+      $fh.ready({},function() {
+      	navigator.app.addWhiteListEntry("*", "*");
+      	$fh.update_hostname_from_name_server('XNDNDlESAHFWnF6iP7-UIn-y');
+        $fh.initialise('XNDNDlESAHFWnF6iP7-UIn-y');
+      });
+    </script>
+	<link href="enyo/enyo.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="lib/onyx/build/onyx.css" rel="stylesheet" type="text/css">
+	<script src="js/util.js" type="text/javascript"></script>
+	<script src="enyo/enyo.js" type="text/javascript"></script>
+	<script src="lib/onyx/build/onyx.js"></script>
+	<script src="js/App.js"></script>
 
 </head>
 <body>
-
-	<div id="container">
-		<div class="centered">
-			http://<input type="url" id="address" autofocus pattern=""><div class="button" id="go">GO</div>
-		</div>
-	<div>
-
-	<script>
-		var address = document.getElementById("address");
-		document.getElementById("go").addEventListener("click", function() {
-			window.location = "http://" + address.value + "/client/default/";
-		});
+	<script type="text/javascript">
+		var app = new App();
+		app.renderInto(document.body);
 	</script>
 </body>
 </html>
