@@ -14,6 +14,7 @@ $fh.ready({}, function() {
 		}
 		var app = new App(),
 			el = document.body.appendChild(document.createElement("div"));
+			el.setAttribute("id", "viewport");
 		app.renderInto(el);
 });
 </script>
