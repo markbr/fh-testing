@@ -1,4 +1,4 @@
-body {
+body, html, #viewport {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -6,10 +6,6 @@ body {
 }
 img {
 	max-width: 90%;
-}
-#viewport {
-	width: 100%;
-	height: 100%;
 }
 .onyx-input-decorator {
 	position: relative;
