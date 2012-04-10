@@ -2,7 +2,6 @@
 <link href="enyo/enyo.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="lib/onyx/build/onyx.css" rel="stylesheet" type="text/css">
-<script src="js/util.js" type="text/javascript"></script>
 <script src="enyo/enyo.js" type="text/javascript"></script>
 <script src="lib/onyx/build/onyx.js"></script>
 <script src="js/App.js"></script>
@@ -12,7 +11,7 @@
 $fh.ready({}, function() {
 		navigator.app.addWhiteListEntry("*", "*");
 		var app = new App()
-		el = document.appendChild(document.createElement("div")
+		el = document.appendChild(document.createElement("div"));
 		app.renderInto(document.body);
 });
 </script>
