@@ -135,10 +135,14 @@ enyo.kind({
 
 		this.addHistoryItem(url, false);
 
-		alert(JSON.stringify(navigator.app));
-
-		navigator.app.clearCache();
-		navigator.app.loadUrl(url, { wait: 2000, loadingDialog: "Loading App", loadUrlTimeoutValue: 60000 });
+		if(navigator.app) {
+			navigator.app.clearCache();
+			navigator.app.loadUrl(url, { wait: 2000, loadingDialog: "Loading App", loadUrlTimeoutValue: 60000 });
+			this.$.loading.show();
+		}
+		else {
+			document.location.href = url;
+		}
 
 		this.$.loading.show();
 	},
