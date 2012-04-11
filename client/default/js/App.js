@@ -135,6 +135,7 @@ enyo.kind({
 
 		this.addHistoryItem(url, false);
 
+		alert(JSON.stringify(navigator.app));
 
 		navigator.app.clearCache();
 		navigator.app.loadUrl(url, { wait: 2000, loadingDialog: "Loading App", loadUrlTimeoutValue: 60000 });
